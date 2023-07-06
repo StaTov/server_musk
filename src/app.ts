@@ -5,6 +5,10 @@ import { unknownEndPoint } from './middleware/unknownEndPoint';
 import logger from './utils/logger';
 import config from './utils/config';
 import mongoose from 'mongoose';
+import { errorHandler } from './middleware/errorHandler';
+import BenefitsRouter from './routes/benefits';
+
+
 
 const app = express();
 
@@ -27,6 +31,9 @@ app.use(express.json());
 
 app.use(requestLogger);
 
+app.use('/benefits', BenefitsRouter);
+
+app.use(errorHandler);
 app.use(unknownEndPoint);
 
 export default app;
