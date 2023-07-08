@@ -1,4 +1,4 @@
-import { createBenefit, deleteBenefitById, getBenefits } from '../models/Benefits';
+import { createBenefit, deleteBenefitById, getBenefits } from '../models/BenefitsModel';
 import { NextFunction, Request, Response } from 'express';
 import { toBenefits } from '../utils/checkType';
 

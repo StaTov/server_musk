@@ -7,6 +7,8 @@ import config from './utils/config';
 import mongoose from 'mongoose';
 import { errorHandler } from './middleware/errorHandler';
 import BenefitsRouter from './routes/benefits';
+import authRouter from './routes/auth';
+import cookieParser from 'cookie-parser';
 
 
 
@@ -27,11 +29,13 @@ mongoose.connect(URI)
     });
 
 app.use(cors({ credentials: true }));
+app.use(cookieParser());
 app.use(express.json());
 
 app.use(requestLogger);
 
 app.use('/benefits', BenefitsRouter);
+app.use('/auth/', authRouter);
 
 app.use(errorHandler);
 app.use(unknownEndPoint);
