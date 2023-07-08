@@ -9,12 +9,12 @@ export const loginAdmin = async (req: Request, res: Response, next: NextFunction
       
         const existAdmin = await getAdminByEmail(email).select('+password');
         if (!existAdmin) {
-            res.status(404).send('wrong email');
+            res.status(404).send({error: 'wrong email'});
             return;
         }
         const existPWD = await bcrypt.compare(password, existAdmin.password);
         if (!existPWD) {
-            res.status(404).send('wrong password');
+            res.status(404).send({error: 'wrong password'});
             return;
         }
         existAdmin.token = await bcrypt.hash(existAdmin._id.toString(), 10);

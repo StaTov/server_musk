@@ -4,7 +4,7 @@ import { toBenefits } from '../utils/checkType';
 
 
 
-export const getAll = async (_req: Request, res: Response,  next: NextFunction) => {
+export const getAll = async (_req: Request, res: Response, next: NextFunction) => {
     try {
         const benefits = await getBenefits();
         res.status(200).json(benefits);

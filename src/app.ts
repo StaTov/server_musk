@@ -28,7 +28,7 @@ mongoose.connect(URI)
         }
     });
 
-app.use(cors({ credentials: true }));
+app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
 app.use(cookieParser());
 app.use(express.json());
 
