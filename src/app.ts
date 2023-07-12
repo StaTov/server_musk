@@ -29,7 +29,7 @@ mongoose.connect(URI)
     });
 
 app.use(express.static('build'));
-app.use(cors({ origin: 'https://musk-server-demo.onrender.com', credentials: true }));
+app.use(cors({ credentials: true }));
 app.use(cookieParser());
 app.use(express.json());
 
