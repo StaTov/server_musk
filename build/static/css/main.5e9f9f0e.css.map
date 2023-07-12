@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/main.5e9f9f0e.css","mappings":"0EAAA,EACC,qBAAsB,CAGvB,kBAAqB,CADrB,QAAS,CADT,SAGA","sources":["index.css"],"sourcesContent":["* {\r\n box-sizing: border-box;\r\npadding: 0;\r\nmargin: 0;\r\nfont-family: 'Roboto';\r\n}\r\n\r\n@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');"],"names":[],"sourceRoot":""}

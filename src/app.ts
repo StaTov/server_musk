@@ -9,7 +9,7 @@ import { errorHandler } from './middleware/errorHandler';
 import BenefitsRouter from './routes/benefits';
 import authRouter from './routes/auth';
 import cookieParser from 'cookie-parser';
-
+import path from 'path';
 
 
 const app = express();
@@ -28,6 +28,7 @@ mongoose.connect(URI)
         }
     });
 
+app.use(express.static('build'));
 app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
 app.use(cookieParser());
 app.use(express.json());
@@ -36,8 +37,12 @@ app.use(requestLogger);
 
 app.use('/benefits', BenefitsRouter);
 app.use('/auth/', authRouter);
-
 app.use(errorHandler);
+
+
+app.use((_req, res) => {
+    res.sendFile(path.join(__dirname, '..', '../server_musk/build', 'index.html'));
+});
 app.use(unknownEndPoint);
 
 export default app;

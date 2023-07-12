@@ -11,4 +11,4 @@ venv.bak/
 node_modules/
 
 # Build folder
-build/
+dist/
