@@ -41,7 +41,7 @@ app.use(errorHandler);
 
 
 app.use((_req, res) => {
-    res.sendFile(path.join(__dirname, '..', '../server_musk/build', 'index.html'));
+    res.sendFile(path.join(__dirname, '../build', 'index.html'));
 });
 app.use(unknownEndPoint);
 
