@@ -28,7 +28,7 @@ export const toLoginAdmin = (obj: unknown): LoginAdmin => {
 export const toBenefits = (obj: unknown): CreateBenefit => {
     if (!obj || typeof obj !== 'object') throw new Error('incorrect data');
     if ('stringOne' in obj && 'stringTwo' in obj && 'number' in obj) {
-        if (isString(obj.stringOne) && isString(obj.stringTwo) && isNumber(obj.number)) {
+        if (isString(obj.stringOne) && isString(obj.stringTwo) && isString(obj.number)) {
             return {
                 stringOne: obj.stringOne,
                 stringTwo: obj.stringTwo,

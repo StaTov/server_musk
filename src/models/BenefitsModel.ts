@@ -4,14 +4,14 @@ interface Benefits {
     id: string,
     stringOne: string ;
     stringTwo: string ;
-    number: number ;
+    number: string ;
 }
 export type CreateBenefit = Omit<Benefits, 'id'>;
 
 const benefitsSchema = new Schema<Benefits>({
     stringOne: 'String',
     stringTwo: 'String',
-    number: 'Number',
+    number: 'String',
 });
 
 const BenefitsModel = model<Benefits>('Benefits', benefitsSchema);
