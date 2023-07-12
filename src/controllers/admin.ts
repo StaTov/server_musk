@@ -23,7 +23,7 @@ export const loginAdmin = async (req: Request, res: Response, next: NextFunction
 
         res.cookie('MUSK-AUTH', existAdmin.token, {
             httpOnly: true,
-            domain: 'localhost',
+            domain: 'musk-server-demo.onrender.com',
             path: '/'
         });
         res.status(200).json({ admin: true });
@@ -38,7 +38,7 @@ export const logOutAdmin = (_req: Request, res: Response, next: NextFunction) =>
         res.cookie('MUSK-AUTH', 'none', {
             expires: new Date(Date.now() + 5 * 1000),
             httpOnly: true,
-            domain: 'localhost',
+            domain: 'musk-server-demo.onrender.com',
             path: '/'
         });
         res.status(200).send('admin logout successully');
